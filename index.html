@@ -166,8 +166,8 @@ const MAPS = q => "https://maps.google.com/?q=" + encodeURIComponent(q);
 const REPLIED_KEY = "cs_rsvp_done";
 const hasReplied = ()=>{ try{ return localStorage.getItem(REPLIED_KEY)==="1"; }catch(_){ return false; } };
 const markReplied = ()=>{ try{ localStorage.setItem(REPLIED_KEY,"1"); }catch(_){} };
-// RSVP closes at the end of 1 July 2026, Swedish time (CEST = UTC+2)
-const DEADLINE = new Date("2026-07-01T23:59:59+02:00");
+// RSVP closes at the end of 8 July 2026, Swedish time (CEST = UTC+2)
+const DEADLINE = new Date("2026-07-08T23:59:59+02:00");
 const isClosed = ()=> new Date() > DEADLINE;
 
 /* ---------------- Invitation + RSVP ---------------- */
@@ -294,7 +294,7 @@ function closedHTML(){
   return `<div class="thanks fade">
       <div class="check">&#9825;</div>
       <h3 class="serif">RSVP is now closed</h3>
-      <p>The deadline to reply was 1 July 2026.<br>If you still need to reach us, please contact Ori-Thevenin below.</p>
+      <p>The deadline to reply was 8 July 2026.<br>If you still need to reach us, please contact Ori-Thevenin below.</p>
     </div>`;
 }
 
